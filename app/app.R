@@ -8,7 +8,7 @@ library(ggplot2)
 library(plotly)
 library(dplyr)
 
-# Load the processed data with better error handling
+# Load the processed data with error handling
 crypto_data <- tryCatch({
   # Try different possible paths
   if (file.exists("crypto_data.rds")) {
@@ -22,7 +22,7 @@ crypto_data <- tryCatch({
   }
 }, error = function(e) {
   stop("Error loading data: ", e$message, 
-       "\nPlease run the data processing script (run.R) first.")
+       "\nRun the data processing script (run.R) first.")
 })
 
 ui <- fluidPage(

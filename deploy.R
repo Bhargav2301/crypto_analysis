@@ -5,7 +5,7 @@ if (!require(rsconnect)) {
 
 library(rsconnect)
 
-# Configure your account with the correct credentials
+# Configure account with the correct credentials
 rsconnect::setAccountInfo(
   name='projectsdm2',
   token='4EBAE4D97D6ADC75E3C9D66576C7D9E7',
@@ -21,5 +21,5 @@ tryCatch({
   )
 }, error = function(e) {
   cat("Deployment Error:", e$message, "\n")
-  cat("Please check your internet connection and credentials.\n")
+  cat("Check internet connection and credentials.\n")
 })
